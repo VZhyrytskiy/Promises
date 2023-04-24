@@ -197,6 +197,8 @@ const p1 = new Promise(resolve => {
     return setTimeout(resolve,2000, {name: "Ann"});
 })
 const p2 = Promise.reject("Promise Error")
+// Promise.any - первій успешный
+// Promise.allSettled - успешные и не успешные, дальше надо наложить фильтр.
 Promise.any([p1,p2])
     .then(data => {
         console.log("Resolved: ", data)
